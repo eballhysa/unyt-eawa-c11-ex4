@@ -1,0 +1,20 @@
+%h2 Create New Student
+
+= form_tag student_path(@student), :method => :put do
+
+  = label :student, :name, 'Name'
+  = text_field :student, :name
+
+  = label :student, :surname, 'Surname'
+  = text_field :student, :surname
+
+  = label :student, :department_code, 'Department'
+  = select :student, :department_code, %w[CS MATH EE PHYS MATH]
+
+  = label :student, :birthday, 'Birthday'
+  = date_select :student, :birthday, start_year: 1960, end_year: 2000
+
+  = label :student, :email, 'Email'
+  = email_field :student, :email
+
+  = submit_tag 'Save Changes'

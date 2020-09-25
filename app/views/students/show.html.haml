@@ -1,0 +1,34 @@
+-# in app/views/movies/show.html.haml
+%h2 Details about #{@student.full_name}
+
+%ul#details
+  %table
+    %tr
+      %td
+        %strong Student Id
+      %td
+        %strong= @student.id
+    %tr
+      %td
+      %td
+    %tr
+      %td Name
+      %td= @student.name
+    %tr
+      %td Surname
+      %td= @student.surname
+    %tr
+      %td Department
+      %td= @student.department_code
+    %tr
+      %td Birthday
+      %td= @student.birthday
+    %tr
+      %td Email
+      %td= @student.email
+
+= link_to 'Back to students', students_path
+|
+= link_to 'Edit student', edit_student_path(@student)
+|
+= link_to 'Delete student', student_path(@student), method: :delete, data: {confirm: 'Delete student?'}
